@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор паролей | SecurePass</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="badge">🔒 SecurePass</div>
+                <h1>Генератор паролей</h1>
+                <p class="subtitle">Создайте надежный пароль за секунду</p>
+            </div>
+            
+            <div class="password-section">
+                <div class="password-wrapper">
+                    <input type="text" id="password" readonly placeholder="ваш пароль">
+                    <button id="copyBtn" class="copy-btn">Копировать</button>
+                </div>
+            </div>
+            
+            <div class="setting">
+                <div class="setting-header">
+                    <span class="setting-label">Длина пароля</span>
+                    <span class="setting-value" id="lengthValue">16</span>
+                </div>
+                <input type="range" id="lengthSlider" min="6" max="40" value="16" class="slider">
+            </div>
+            
+            <div class="setting">
+                <div class="setting-header">
+                    <span class="setting-label">Уровень сложности</span>
+                    <span class="setting-value" id="complexityValue">Сложный</span>
+                </div>
+                <input type="range" id="complexitySlider" min="1" max="4" step="1" value="3" class="slider">
+                <div class="complexity-labels">
+                    <span>Простой</span>
+                    <span>Средний</span>
+                    <span>Сложный</span>
+                    <span>Макс</span>
+                </div>
+            </div>
+            
+            <div class="options">
+                <label class="option">
+                    <input type="checkbox" id="uppercase" checked>
+                    <span>Заглавные A-Z</span>
+                </label>
+                <label class="option">
+                    <input type="checkbox" id="lowercase" checked>
+                    <span>Строчные a-z</span>
+                </label>
+                <label class="option">
+                    <input type="checkbox" id="numbers" checked>
+                    <span>Цифры 0-9</span>
+                </label>
+                <label class="option">
+                    <input type="checkbox" id="symbols" checked>
+                    <span>Символы !@#$%</span>
+                </label>
+            </div>
+            
+            <button id="generateBtn" class="generate-btn">Сгенерировать пароль</button>
+            
+            <div class="strength-card">
+                <div class="strength-header">
+                    <span>Надежность пароля</span>
+                    <span id="strengthLabel" class="strength-level">Хороший</span>
+                </div>
+                <div class="strength-bar">
+                    <div id="strengthFill"></div>
+                </div>
+                <p id="strengthHint" class="strength-hint">Выберите параметры для создания надежного пароля</p>
+            </div>
+            
+            <footer>
+                <p>SecurePass — защита ваших данных</p>
+            </footer>
+        </div>
+    </div>
+    
+    <div id="toast" class="toast">Скопировано</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
